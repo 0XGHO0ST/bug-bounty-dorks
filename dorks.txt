@@ -1,0 +1,90 @@
+- Google
+site:*.example.com ("username" OR "password" OR "passwd")
+site:*.example.com filetype:env ("password=" OR "apikey=" OR "secret")
+site:*.example.com filetype:json ("AWS_ACCESS_KEY_ID" OR "AWS_SECRET_ACCESS_KEY")
+site:*.example.com (inurl:admin OR inurl:login OR inurl:dashboard)
+site:*.example.com inurl:.git
+site:*.example.com filetype:txt ("password=" OR "DB_PASSWORD=")
+site:*.example.com intitle:"index of" ("backup" OR ".env")
+site:*.example.com filetype:pem ("BEGIN RSA PRIVATE KEY")
+site:*.example.com filetype:log ("error" OR "exception")
+site:*.example.com filetype:sql ("dump" OR "backup")
+site:*.example.com ("admin panel" OR "restricted access")
+site:*.example.com ("api_key" OR "access_token")
+site:*.example.com filetype:yaml ("AWS_ACCESS_KEY_ID")
+site:*.example.com filetype:pdf ("confidential")
+site:*.example.com filetype:xls ("payroll" OR "salary")
+site:*.example.com ("credit card" OR "CVV")
+site:*.example.com (inurl:api OR inurl:graphql)
+site:*.example.com (inurl:wp- OR inurl:joomla OR inurl:drupal)
+site:*.example.com filetype:xml "apiKey"
+site:*.example.com filetype:properties password
+site:*.example.com inurl:backup filetype:zip
+site:*.example.com intitle:"Directory Listing"
+site:*.example.com "api_key" filetype:js
+
+- Shodan
+hostname:"example.com" http.title:"index of /"
+hostname:"example.com" http.html:"password"
+hostname:"example.com" http.html:"email"
+hostname:"example.com" http.html:"ssn"
+hostname:"example.com" http.html:"invoice"
+hostname:"example.com" http.html:"Apache Tomcat"
+hostname:"example.com" http.title:"GlobalProtect Portal"
+hostname:"example.com" http.html:"liferayPortalCSS"
+hostname:"example.com" port:8080 http.title:"Jenkins"
+hostname:"example.com" http.title:"Kibana" -http.title:"Login"
+hostname:"example.com" http.html:"No file selected"
+hostname:"example.com" http.title:"Protected Object" -401 -403
+hostname:"example.com" ssl.cert.subject.cn:"example.com" http.status:"200"
+hostname:"example.com" port:22 ssh.protocol_version:"2.0"
+hostname:"example.com" port:3389
+hostname:"example.com" port:5900
+hostname:"example.com" http.component:"react"
+
+- Github
+"example.com" path:**/.env
+"example.com" path:**/config.js
+"example.com" path:**/package.json
+"example.com" path:**/sftp-config.json password
+"example.com" path:**/.s3cfg
+"example.com" path:**/config.php dbpasswd
+"example.com" path:**/.netrc password
+"example.com" path:**/.npmrc _auth
+"example.com" path:**/WebServers.xml
+"example.com" path:**/prod.secret.exs
+"example.com" path:**/travis.yml
+"example.com" path:**/secrets.yml password
+"example.com" "AWS_SECRET_ACCESS_KEY"
+"example.com" "AWS_ACCESS_KEY_ID"
+"example.com" "aws_access_key_id"
+"example.com" "GCP_SECRET"
+"example.com" "DB_PASSWORD"
+"example.com" "DATABASE_URL"
+"example.com" "MYSQL_PASSWORD"
+"example.com" "POSTGRES_PASSWORD"
+"example.com" "mongo_uri"
+"example.com" "BEGIN RSA PRIVATE KEY"
+"example.com" "BEGIN OPENSSH PRIVATE KEY"
+"example.com" id_rsa
+"example.com" private_key.pem
+"example.com" "shodan_api_key"
+"example.com" "slack_token"
+"example.com" "github_token"
+"example.com" "stripe_secret"
+"example.com" path:**/.env "password"
+"example.com" "client_secret"
+"example.com" path:**/docker-compose.yml password
+"example.com" path:**/k8s-secret.yaml
+"example.com" "HEROKU_API_KEY"
+"example.com" path:**/.git/config
+"example.com" "gcloud_api_key"
+"example.com" "firebase_url"
+"example.com" "db_password"
+"example.com" "twilio_auth_token"
+"example.com" "mailgun"
+"example.com" "-----BEGIN PRIVATE KEY-----"
+"example.com" "client_id" "client_secret"
+"example.com" "refresh_token"
+"example.com" path:**/.docker/config.json
+"example.com" "PRIVATE_KEY"
